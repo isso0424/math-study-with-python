@@ -53,5 +53,23 @@ def get_prime(origin):
     return prime_number
 
 
+def int_input(text):
+    """
+    Parameters
+    ----------
+    text : str
+        this text print when do input()
+    Returns
+    -------
+    n : int
+        input number
+    """
+    while True:
+        n = input(text)
+        if type(n) is int:
+            return n
+        print("please input integer")
+
+
 if __name__ == "__main__":
     prime_factorization(123)

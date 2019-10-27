@@ -78,6 +78,9 @@ class quadratic:
                 x = 0 => 4
             [1] : solutions[0]
             [2] : solutions[1]
+            [3] : inequality + quality
+                True >= or <=
+                False > or <
             if no solution, return None
         """
         solution = []
@@ -95,6 +98,7 @@ class quadratic:
             else:
                 solution.append(4)
                 solution.append(0)
+            return solution
         elif direction == 0 or direction == 2:
             solution.append(0)
             solution.append(solutions[0])
@@ -103,6 +107,10 @@ class quadratic:
             solution.append(1)
             solution.append(solutions[0])
             solution.append(solutions[1])
+        if direction == 1 or direction == 3:
+            solution.append(True)
+        else:
+            solution.append(False)
         return solution
 
 

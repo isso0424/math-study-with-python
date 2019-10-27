@@ -1,8 +1,11 @@
 from basic import int_input
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 class quadratic:
     """
+    deal with quadratic formula
     Parameter
     ---------
     self.a : int
@@ -20,6 +23,7 @@ class quadratic:
 
     def equation(self):
         """
+        calculate quadratic equation and return value list
         Return
         ------
         solution : list
@@ -36,6 +40,7 @@ class quadratic:
 
     def equation_value(self):
         """
+        calculate quadratic equation value
         Return
         ------
         solution : list(complex)
@@ -55,6 +60,7 @@ class quadratic:
 
     def inequality(self, direction):
         """
+        calculate quadratic inequality value
         Parameters
         ----------
         direction : int
@@ -113,6 +119,7 @@ class quadratic:
 
     def output_inequality_solution(self, direction):
         """
+        quadratic inequality value transform to str
         Returns
         -------
         result : str
@@ -136,7 +143,27 @@ class quadratic:
         else:
             return "x = 0"
 
+    def function_graph(self):
+        """
+        plot quadratic function graph
+        """
+        x_max = int_input("input x max")
+        x_min = int_input("input x min")
+        x = np.arange(x_min, x_max, 0.1)
+        y = self.a * x ** 2 + self.b * x + self.c
+        plt.plot(x, y)
+        plt.show()
+
+    def function_variation(self):
+        """
+        make formula from quadratic formula
+        Returns
+        -------
+        result : str
+            a(x-p)+q
+        """
+
 
 if __name__ == "__main__":
     test = quadratic()
-    print(test.output_inequality_solution(2))
+    print(test.function_graph())

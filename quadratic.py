@@ -162,8 +162,12 @@ class quadratic:
         result : str
             a(x-p)+q
         """
+        return "{}(x - {})^2 + {}".format(
+                                        self.a,
+                                        self.b / (self.a * 2),
+                                        self.c - self.a * (self.b / self.a / 2) ** 2)
 
 
 if __name__ == "__main__":
     test = quadratic()
-    print(test.function_graph())
+    print(test.function_variation())

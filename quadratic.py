@@ -1,6 +1,4 @@
-# TODO:はよ書け!!!
 from basic import int_input
-import math
 
 
 class quadratic:
@@ -40,7 +38,7 @@ class quadratic:
         """
         Return
         ------
-        solution : list(float)
+        solution : list(complex)
             solution value of quadratic equation
         """
         D = self.b ** 2 - 4 * self.a * self.c
@@ -49,7 +47,7 @@ class quadratic:
             solution.append((-self.b + pow(self.b**2 - 4 * self.a * self.c, 0.5)) / 2 * self.a)
             solution.append((-self.b - pow(self.b**2 - 4 * self.a * self.c, 0.5)) / 2 * self.a)
         elif D == 0:
-            solution.append(-self.b / (2 * self.a))
+            solution.append(-self.b / (2 * self.a) + 0j)
         else:
             solution.append((-self.b + pow(self.b**2 - 4 * self.a * self.c, 0.5)))
             solution.append((-self.b + pow(self.b**2 - 4 * self.a * self.c, 0.5)))

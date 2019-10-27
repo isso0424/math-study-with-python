@@ -11,6 +11,7 @@ def prime_factorization(original):
     result : List
         prime factorization result
     """
+    result = []
     prime_number = get_prime(original // 2 + 1)
     for i in prime_number:
         n = original
@@ -66,7 +67,7 @@ def int_input(text):
     """
     while True:
         try:
-            n = int(input(text))
+            n = int(input("{}\n>>>".format(text)))
             return n
         except ValueError:
             print("please input integer")

@@ -55,7 +55,58 @@ class quadratic:
             solution.append((-self.b + pow(self.b**2 - 4 * self.a * self.c, 0.5)))
         return solution
 
+    def inequality(self, direction):
+        """
+        Parameters
+        ----------
+        direction : int
+            if it is 0, inequality is >
+            if it is 1, inequality is <
+            if it is 2, inequality is >=
+            if it is 3, inequality is <=
+        Returns
+        -------
+        solution : list(complex), None
+            [0] : x < solutions[0], solutions[1] < x => 0
+                or
+                solutions[0] < x solutions[1] => 1
+                or
+                x != 0 => 2
+                or
+                x is all real numbers => 3
+                or
+                x = 0 => 4
+            [1] : solutions[0]
+            [2] : solutions[1]
+            if no solution, return None
+        """
+        solution = []
+        solutions = self.equation_value()
+        solutions.sort()
+        print(solutions)
+        if len(solutions) == 1:
+            if direction == 0:
+                solution.append(2)
+                solution.append(0)
+            elif direction == 1:
+                return None
+            elif direction == 2:
+                solution.append(3)
+            else:
+                solution.append(4)
+                solution.append(0)
+        elif direction == 0 or direction == 2:
+            solution.append(0)
+            solution.append(solutions[0])
+            solution.append(solutions[1])
+        else:
+            solution.append(1)
+            solution.append(solutions[0])
+            solution.append(solutions[1])
+        return solution
+
 
 if __name__ == "__main__":
     test = quadratic()
     print(test.equation_value())
+    print(test.inequality(2))

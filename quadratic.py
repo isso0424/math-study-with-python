@@ -111,8 +111,32 @@ class quadratic:
             solution.append(False)
         return solution
 
+    def output_inequality_solution(self, direction):
+        """
+        Returns
+        -------
+        result : str
+            print inequality
+        """
+        solution = self.inequality(direction)
+        if solution[0] == 0:
+            if solution[3]:
+                return "x <= {}, {} <= x".format(solution[1], solution[2])
+            else:
+                return "x < {}, {} < x".format(solution[1], solution[2])
+        elif solution[0] == 1:
+            if solution[3]:
+                return "{} <= x <= {}".format(solution[1], solution[2])
+            else:
+                return "{} < x < {}".format(solution[1], solution[2])
+        elif solution[0] == 2:
+            return "x != 0"
+        elif solution[0] == 3:
+            return "x ∈ R"
+        else:
+            return "x = 0"
+
 
 if __name__ == "__main__":
     test = quadratic()
-    print(test.equation_value())
-    print(test.inequality(2))
+    print(test.output_inequality_solution(2))

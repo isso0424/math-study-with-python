@@ -1,6 +1,4 @@
-# TODO:はよ書け!!!
 from basic import int_input
-import math
 
 
 class quadratic:

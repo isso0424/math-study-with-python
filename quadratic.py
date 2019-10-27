@@ -58,4 +58,4 @@ class quadratic:
 
 if __name__ == "__main__":
     test = quadratic()
-    test.equation()
+    print(test.equation_value())

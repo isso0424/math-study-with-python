@@ -105,7 +105,7 @@ class quadratic:
             solution.append(1)
             solution.append(solutions[0])
             solution.append(solutions[1])
-        if direction == 1 or direction == 3:
+        if direction == 2 or direction == 3:
             solution.append(True)
         else:
             solution.append(False)

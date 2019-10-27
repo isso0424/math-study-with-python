@@ -65,10 +65,11 @@ def int_input(text):
         input number
     """
     while True:
-        n = input(text)
-        if type(n) is int:
+        try:
+            n = int(input(text))
             return n
-        print("please input integer")
+        except ValueError:
+            print("please input integer")
 
 
 if __name__ == "__main__":

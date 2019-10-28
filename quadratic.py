@@ -3,6 +3,20 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 
+def value_range():
+    """
+    make range a < x < b
+    Returns
+    -------
+    x_range : numpy.arange
+        x value range
+    """
+    x_max = int_input("input x max")
+    x_min = int_input("input x min")
+    x_range = np.arange(x_min, x_max, 0.1)
+    return x_range
+
+
 class quadratic:
     """
     deal with quadratic formula
@@ -147,9 +161,7 @@ class quadratic:
         """
         plot quadratic function graph
         """
-        x_max = int_input("input x max")
-        x_min = int_input("input x min")
-        x = np.arange(x_min, x_max, 0.1)
+        x = value_range()
         y = self.a * x ** 2 + self.b * x + self.c
         plt.plot(x, y)
         plt.show()

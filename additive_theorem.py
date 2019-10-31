@@ -53,13 +53,13 @@ class Add_theorem:
             this value is product sum formula value
         """
         if mode == 0:
-            result = (math.sin(x + y) + math.sin(x - y)) / 2
+            result = (sin(x + y) + sin(x - y)) / 2
         elif mode == 1:
-            result = (math.sin(x + y) + math.sin(y - x)) / 2
+            result = (sin(x + y) + sin(y - x)) / 2
         elif mode == 2:
-            result = (math.cos(x + y) + math.cos(x - y)) / 2
+            result = (cos(x + y) + cos(x - y)) / 2
         elif mode == 3:
-            result = (math.cos(y - x) + math.cos(x + y)) / 2
+            result = (cos(y - x) + cos(x + y)) / 2
         else:
             raise ValueError("mode is between 0 and 3")
         return result

@@ -40,6 +40,7 @@ class coordinate:
         self.y = y
 
     def __str__(self):
+        # override __str__
         return "{}, {}".format(self.x, self.y)
 
 

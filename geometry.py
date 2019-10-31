@@ -6,7 +6,7 @@ class Plane:
     def __init__(self):
         x1 = basic.int_input("input x1")
         y1 = basic.int_input("input y1")
-        self.coordinate1 = coordinate(x1, y1)
+        self.coordinate1 = Coordinate(x1, y1)
         print(self.coordinate1)
 
     def internal_dividing_point(self, ratio_x, ratio_y):
@@ -26,7 +26,7 @@ class Plane:
         pass
 
 
-class coordinate:
+class Coordinate:
     # date class of coordinate
     def __init__(self, x, y):
         """
@@ -44,5 +44,16 @@ class coordinate:
         return "{}, {}".format(self.x, self.y)
 
 
+class Solid(Coordinate):
+    # data class of Solid Coordinate
+    def __init__(self, x, y, z):
+        super().__init__(x, y)
+        self.z = z
+
+    def __str__(self):
+        return "{}, {}, {}".format(self.x, self.y, self.z)
+
+
 if __name__ == "__main__":
     a = Plane()
+    b = Solid(1, 2, 3)

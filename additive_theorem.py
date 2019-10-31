@@ -1,5 +1,4 @@
 from math import sin, cos
-import basic
 
 
 class Add_theorem:

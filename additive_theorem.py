@@ -1,4 +1,4 @@
-import math
+from math import sin, cos
 import basic
 
 
@@ -73,3 +73,4 @@ class Add_theorem:
         result : float
             this value is product sum formula value
         """
+

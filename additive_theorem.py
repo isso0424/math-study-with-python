@@ -84,4 +84,14 @@ class Add_theorem:
         result : float
             this value is product sum formula value
         """
-
+        if mode == 0:
+            result = 2 * (sin((x+y)/2)*cos((x-y)/2))
+        elif mode == 1:
+            result = 2 * (cos((x+y)/2)*sin((x-y)/2))
+        elif mode == 2:
+            result = 2 * (cos((x+y)/2)*cos((x-y)/2))
+        elif mode == 3:
+            result = 2 * (sin((x+y)/2)*sin((x-y)/2))
+        else:
+            raise ValueError("mode is between 0 and 3")
+        return result
